@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>바이블틈 개인정보처리방침</title>
+<meta name="description" content="바이블틈 앱의 개인정보처리방침" />
+<style>
+  :root { --bg:#F7F8FA; --card:#FFFFFF; --text:#17191D; --muted:#626B78; --border:#E5E8EC; --primary:#4E6B91; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#101318; --card:#14171C; --text:#F0F2F5; --muted:#A2ABB8; --border:#303640; --primary:#9AB4D8; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font-family:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+         line-height:1.75; word-break:keep-all; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  header { margin-bottom:24px; }
+  .brand { color:var(--primary); font-weight:700; font-size:15px; letter-spacing:.5px; }
+  h1 { font-size:28px; line-height:1.3; margin:6px 0 12px; }
+  .meta { color:var(--muted); font-size:15px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px 22px; margin:14px 0; }
+  h2 { font-size:18px; margin:0 0 8px; }
+  p, li { font-size:16px; }
+  ul { padding-left:20px; margin:8px 0; }
+  a { color:var(--primary); }
+  footer { color:var(--muted); font-size:14px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">바이블틈 · BIBLE TEUM</div>
+    <h1>개인정보처리방침</h1>
+    <div class="meta">시행일: 2026년 10월 29일<br/>운영자: 바이블틈 · 문의: <a href="mailto:rbqls6651@gmail.com">rbqls6651@gmail.com</a></div>
+  </header>
+
+  <section class="card">
+    <p>바이블틈(이하 "앱")은 회원가입 없이 기기 안에서 사용하는 성경 읽기 습관 앱입니다. 앱은 광고, 원격 분석, 충돌 보고 도구를 사용하지 않으며, 사용자의 읽기·필사 기록이나 제한한 앱 목록을 운영자 서버로 보내지 않습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>1. 기기 안에만 저장하는 정보</h2>
+    <ul>
+      <li>말씀 읽기·필사 기록, 필사 초안, 진행 중인 통독 위치</li>
+      <li>사용자가 고른 설정(번역본, 분량, 해제 방식, 일시 해제 횟수 등)</li>
+      <li>사용자가 제한하도록 고른 앱 목록과 제한·해제 상태</li>
+    </ul>
+    <p>이 정보는 사용자의 기기에만 저장되며, 사용자가 앱에서 삭제하거나 앱을 지우면 함께 삭제됩니다. 사용자가 직접 백업 파일(JSON)을 내보낼 수 있으며, 내보낸 파일은 사용자가 고른 곳에 저장됩니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. 앱 제한 기능에서 확인하는 정보 (사용자가 직접 켠 경우에만)</h2>
+    <ul>
+      <li><strong>Android:</strong> 접근성 서비스를 사용해, 사용자가 고른 앱이 화면에 보이는지 판단합니다. 이를 위해 화면에 열린 창의 종류, 위치와 크기, 입력 중인 창인지 여부, 작은 창(PiP) 여부, 그리고 그 창의 앱 패키지 이름만 기기 안에서 확인합니다. 화면에 보이는 글자, 메시지, 입력 내용, 사진은 읽거나 저장하지 않으며, 확인한 창 정보와 앱 사용 이력은 저장하거나 외부로 보내지 않습니다.</li>
+      <li><strong>iPhone:</strong> Apple의 스크린 타임 기능을 사용합니다. 사용자가 고른 앱은 Apple이 관리하는 식별 정보로만 다뤄지며, 바이블틈은 어떤 앱인지 알 수 없습니다.</li>
+    </ul>
+    <p>이 기능은 장애 지원 도구가 아닙니다. 사용자는 언제든 기기 설정에서 접근성 서비스 또는 스크린 타임 권한을 끌 수 있습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>3. 외부로 전달되는 정보</h2>
+    <ul>
+      <li><strong>앱 업데이트 확인:</strong> 앱은 실행할 때 새 버전이 있는지 확인하고 내려받기 위해 Expo(EAS Update) 서버에 연결합니다. 이 과정에서 운영체제 종류, 앱 프로젝트 정보, 설치를 구분하기 위한 임의의 토큰과 일반적인 네트워크 정보(IP 주소 등)가 전달될 수 있습니다. 읽기·필사 기록, 제한한 앱 목록, 화면 정보는 전달하지 않습니다. 자세한 내용은 <a href="https://expo.dev/privacy">Expo 개인정보처리방침</a>을 따릅니다.</li>
+      <li>성경 본문은 앱에 들어 있어 본문을 읽기 위해 인터넷에 연결하지 않습니다.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>4. 제3자 제공·판매</h2>
+    <p>앱은 사용자의 개인정보를 판매하거나 광고 목적으로 제3자에게 제공하지 않습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>5. 아동</h2>
+    <p>앱은 만 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 알면서 수집하지 않습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>6. 사용자의 권리</h2>
+    <p>모든 기록은 사용자의 기기에 있으므로, 사용자는 앱의 데이터 설정에서 기록을 내보내거나 삭제할 수 있습니다. 운영자는 사용자 기록에 접근할 수 없습니다. 문의는 <a href="mailto:rbqls6651@gmail.com">rbqls6651@gmail.com</a>으로 보내 주세요.</p>
+  </section>
+
+  <section class="card">
+    <h2>7. 변경</h2>
+    <p>이 방침이 바뀌면 이 페이지에 시행일과 함께 알립니다.</p>
+  </section>
+
+  <footer>© 2026 바이블틈</footer>
+</main>
+</body>
+</html>
