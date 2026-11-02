@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>바이블틈 — 앱을 열기 전, 말씀 먼저</title>
+<meta name="description" content="하루 분량의 말씀을 읽으면 멈춰 둔 앱이 다시 열려요. App Store · Google Play" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="바이블틈 — 앱을 열기 전, 말씀 먼저" />
+<meta property="og:description" content="하루 분량의 말씀을 읽으면 멈춰 둔 앱이 다시 열려요." />
+<meta property="og:image" content="https://gyu-bin.github.io/bibleteum-privacy/get/icon.png" />
+<meta property="og:url" content="https://gyu-bin.github.io/bibleteum-privacy/get/" />
+<link rel="icon" href="icon.png" />
+<style>
+  :root { --bg:#FBF9F7; --text:#2A2228; --muted:#7D7379; --mauve:#765166; --soft:#E8D7E2; --on:#FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#171519; --text:#F3EFF1; --muted:#A99FA6; --mauve:#D5ACC7; --soft:#42323E; --on:#261B24; } }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); display:flex; align-items:center; justify-content:center;
+         font-family:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; word-break:keep-all; }
+  main { width:100%; max-width:420px; padding:40px 20px; text-align:center; }
+  img { width:96px; height:96px; border-radius:22px; }
+  h1 { font-family:"AppleMyungjo", "Nanum Myeongjo", serif; font-weight:400; font-size:30px; margin:20px 0 8px; }
+  p { color:var(--muted); font-size:16px; line-height:1.65; margin:0 0 28px; }
+  a.btn { display:block; padding:15px; border-radius:12px; font-size:16px; text-decoration:none; margin-top:10px; }
+  .primary { background:var(--mauve); color:var(--on); }
+  .secondary { border:1px solid var(--soft); color:var(--mauve); }
+  .open { color:var(--mauve); font-size:15px; display:inline-block; margin-top:22px; }
+  .hide { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon.png" alt="" />
+  <h1>바이블틈</h1>
+  <p>앱을 열기 전, 말씀 먼저.<br />하루 분량의 말씀을 읽으면 멈춰 둔 앱이 다시 열려요.</p>
+  <a class="btn primary" id="ios" href="https://apps.apple.com/kr/app/id6827408979">App Store에서 받기</a>
+  <a class="btn primary" id="android" href="https://play.google.com/store/apps/details?id=com.veruon.app">Google Play에서 받기</a>
+  <a class="open" id="open" href="veruon://">이미 설치했어요 · 앱 열기</a>
+</main>
+<script>
+  // The device's own store first; a computer sees both.
+  var ua = navigator.userAgent || "";
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  if (ios) document.getElementById("android").classList.add("hide");
+  if (android) document.getElementById("ios").classList.add("hide");
+  if (!ios && !android) { document.getElementById("open").classList.add("hide"); document.getElementById("android").className = "btn secondary"; }
+</script>
+</body>
+</html>
