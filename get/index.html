@@ -47,6 +47,15 @@
   if (ios) document.getElementById("android").classList.add("hide");
   if (android) document.getElementById("ios").classList.add("hide");
   if (!ios && !android) { document.getElementById("open").classList.add("hide"); document.getElementById("android").className = "btn secondary"; }
+
+  // Campaign tags: "?src=share_card" (or church, instagram…) is passed on to the stores, so their
+  // consoles count each source apart. Only lowercase letters, digits and "_" are kept.
+  var src = ((new URLSearchParams(location.search).get("src") || "web").toLowerCase().replace(/[^a-z0-9_]/g, "").slice(0, 40)) || "web";
+  var APPLE_PT = ""; // App Store Connect provider token; campaign tags reach Apple only with it.
+  var appStore = "https://apps.apple.com/kr/app/id6827408979" + (APPLE_PT ? "?pt=" + APPLE_PT + "&ct=" + src + "&mt=8" : "");
+  var play = "https://play.google.com/store/apps/details?id=com.veruon.app&referrer=" + encodeURIComponent("utm_source=" + src + "&utm_medium=get_page");
+  document.getElementById("ios").href = appStore;
+  document.getElementById("android").href = play;
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6319d248d6c640c9a7d83174a56b2648"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
