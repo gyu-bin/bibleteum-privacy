@@ -26,6 +26,7 @@
   .secondary { border:1px solid var(--soft); color:var(--mauve); }
   .open { color:var(--mauve); font-size:15px; display:inline-block; margin-top:22px; }
   .hide { display:none !important; }
+  .note { color:var(--muted); font-size:12px; margin-top:36px; }
 </style>
 </head>
 <body>
@@ -36,6 +37,7 @@
   <a class="btn primary" id="ios" href="https://apps.apple.com/kr/app/id6827408979">App Store에서 받기</a>
   <a class="btn primary" id="android" href="https://play.google.com/store/apps/details?id=com.veruon.app">Google Play에서 받기</a>
   <a class="open" id="open" href="veruon://">이미 설치했어요 · 앱 열기</a>
+  <p class="note">이 페이지는 쿠키 없이 방문 수만 셉니다(Cloudflare Web Analytics).</p>
 </main>
 <script>
   // The device's own store first; a computer sees both.
@@ -46,5 +48,6 @@
   if (android) document.getElementById("ios").classList.add("hide");
   if (!ios && !android) { document.getElementById("open").classList.add("hide"); document.getElementById("android").className = "btn secondary"; }
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6319d248d6c640c9a7d83174a56b2648"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
