@@ -32,6 +32,7 @@
         <p class="lead">인스타그램이나 유튜브를 잠시 멈추고<br class="wide-break"> 말씀을 읽거나 필사해요.</p>
         <p class="detail">오늘 읽은 한 장부터 나만의 통독 기록이 쌓여요.</p>
         <div id="download">
+          <p class="detail" id="invitation-note" hidden></p>
           <div class="stores" id="stores">
             <a class="btn" id="ios" href="https://apps.apple.com/kr/app/id6827408979">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.85c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.78 1.02.08 2.05-.52 2.68-1.26z"/></svg>
@@ -100,6 +101,35 @@
   document.getElementById("ios").href = appStore;
   document.getElementById("android").href = play;
 
+  var fragment = location.hash;
+  var invitePage = src === "group_invite" || fragment.indexOf("#join=") === 0;
+  if (invitePage) {
+    var invite = /^#join=([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\.([A-HJ-NP-Z2-9]{6})$/i.exec(fragment);
+    var ko = /^ko\b/i.test(navigator.language || "ko");
+    var title = ko ? "바이블틈 모임 초대" : "BibleUnscroll group invitation";
+    document.title = title;
+    document.getElementById("title").textContent = title;
+    document.querySelector(".intro .lead").textContent = invite
+      ? (ko ? "초대를 열면 코드가 채워져요. 모임에 들어갈지 앱에서 선택할 수 있어요." : "Open the invitation to fill in the code. You can choose whether to join in the app.")
+      : (ko ? "초대 링크를 다시 확인하거나 받은 코드를 앱에서 입력해 주세요." : "Check the invitation link or enter the code you received in the app.");
+    document.querySelector(".intro > .detail").hidden = true;
+    var open = document.getElementById("open");
+    open.hidden = !invite;
+    if (invite) {
+      open.href = "veruon://join-group#" + invite[1].toLowerCase() + "." + invite[2].toUpperCase();
+      open.textContent = ko ? "바이블틈에서 초대 열기" : "Open invitation in BibleUnscroll";
+      var note = document.getElementById("invitation-note");
+      note.textContent = ko ? "앱이 없다면 설치한 뒤 이 초대 링크를 다시 열어 주세요." : "If the app isn't installed, install it and open this invitation again.";
+      note.hidden = false;
+    }
+  } else {
+    var beacon = document.createElement("script");
+    beacon.type = "module";
+    beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    beacon.setAttribute("data-cf-beacon", '{"token":"6319d248d6c640c9a7d83174a56b2648"}');
+    document.body.appendChild(beacon);
+  }
+
   // A download button follows once the top buttons have scrolled away (phones only).
   var sticky = document.getElementById("sticky");
   var stickyBtn = document.getElementById("stickyBtn");
@@ -110,6 +140,6 @@
       .observe(document.getElementById("stores"));
   }
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6319d248d6c640c9a7d83174a56b2648"}'></script><!-- End Cloudflare Web Analytics -->
+
 </body>
 </html>
