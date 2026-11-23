@@ -58,6 +58,9 @@
 <h3>성경 읽기 통계</h3>
 <p>성경 읽기 통계에 별도로 동의하면, 동의 이후 완료한 읽기의 책·장, 읽은 시간, 완료 일시를 Supabase에 전송합니다. 여러 기기에서 읽어도 한국 시간 오전 4시를 기준으로 같은 계정을 하루 한 명으로 세기 위해 로그인 계정을 사용합니다. 읽기 활동으로 종교적 관심을 짐작할 수 있으며, 운영 화면은 인원·분량·시간과 책·장별 집계만 표시합니다. 성경 본문, 절 번호, 필사 내용, 메모, 모임 식별자는 이 통계에 포함하지 않습니다.</p>
 <p>통계는 최대 2년간 보관하고 계정을 삭제하면 연결된 읽기 통계도 함께 삭제합니다. 설정 → 데이터와 도움말 → 성경 읽기 통계 보내기를 끄거나 로그아웃하면 이 기기의 새 전송을 멈추고 대기 자료를 삭제합니다.</p>
+<h3>선택 사항인 읽기 과정 통계</h3>
+<p>별도로 동의한 뒤 홈 진입, 읽기 시작·이어 읽기, 마지막 절 도달, 완료 조건 충족, 완료 저장, 잠금 해제 결과와 시점을 Supabase에 전송합니다. 읽기 유형, 개인 통독 프로그램 종류, 예정 장 수, 활성 읽기 시간, 기기에서 확인한 예정일과 완료 여부, 앱 플랫폼·버전·빌드·업데이트 식별 정보를 함께 사용합니다. 가입 후 첫 읽기를 집계할 때 기존 계정 생성 시각을 사용합니다. 계정별 중복은 서버에서 제거하고 운영자는 집계만 조회합니다. 원문, 절 번호, 메모, 모임 ID, 제한한 앱 이름 및 오류 원문은 이 통계에 포함하지 않습니다.</p>
+<p>통계는 최대 2년 보관하며 계정 삭제 시 연결된 통계가 삭제됩니다. 설정 → 데이터와 도움말 → 읽기 과정 통계 보내기에서 끄거나 로그아웃하면 이 기기의 새 전송을 중단하고 대기분을 지웁니다. 새 동의 이전의 읽기 과정은 전송하지 않습니다.</p>
 </section>
 <section class="card">
 <h2>4. 선택한 앱의 잠금과 기기 권한</h2>
@@ -109,6 +112,9 @@
 <h4>Bible reading statistics</h4>
 <p>If you opt in separately, we send the books and chapters, time spent reading, and completion time for future completed readings to Supabase. We use your account to count you once per day across devices, with a new day starting at 4 a.m. Korea time. Reading activity may indicate religious interests. Operators see only aggregate figures for readers, reading volume and time, and books and chapters. This information does not include Bible text, verse numbers, copied text, notes, or group IDs.</p>
 <p>We keep this data for up to two years and delete the records linked to your account when you delete your account. Turn off Share Bible reading statistics in Settings → Data and help, or sign out, to stop uploads and clear queued data on this device.</p>
+<h4>Optional reading flow statistics</h4>
+<p>If you opt in separately, we send the timing of reaching Home, starting or resuming a reading, reaching its final verse, meeting completion requirements, saving the result and the outcome of unlocking an app to Supabase. We also send reading type, personal plan type, planned chapter count, active reading time, observed scheduled days and completions, and platform, app version, build, and update identifiers. We use the account creation date to measure first reading. The dashboard shows aggregate results only. This data excludes Bible text, verse numbers, notes, group IDs, locked app names, and raw errors.</p>
+<p>We keep this data for up to two years and delete the records linked to your account when you delete it. Turn off Settings → Data and help → Share reading flow statistics or sign out to stop new uploads and clear pending data on that device. We do not send reading flow history from before the new choice.</p>
 </section>
 <section class="card">
 <h3>4. App Lock and device permissions</h3>
