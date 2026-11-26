@@ -17,7 +17,7 @@
   var invite = /^#join=([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\.([A-HJ-NP-Z2-9]{6})$/i.exec(location.hash);
   if (src === "group_invite" || location.hash.indexOf("#join=") === 0) {
     document.body.classList.add("invite");
-    document.querySelectorAll(".duo, .day, .contents, .together, .closing").forEach(function (el) { el.hidden = true; });
+    document.querySelectorAll(".resting, .day, .contents, .together, .closing").forEach(function (el) { el.hidden = true; });
     document.getElementById("title").textContent = "바이블틈 모임 초대";
     document.querySelector(".intro .lead").textContent = invite
       ? "초대를 열면 코드가 채워져요. 모임에 들어갈지 앱에서 선택할 수 있어요."
@@ -60,6 +60,7 @@
   var hint = day.querySelector("[data-rh]");
   var finish = day.querySelector("[data-finish]");
   var current = "";
+  var light = document.querySelector(".day-light");
 
   function show(name, beat) {
     if (current !== name) {
@@ -91,6 +92,8 @@
     // The three bars fill with the steps: step 1 over 0–.4, step 2 over .4–.8, step 3 over .8–1.
     var parts = [p / .4, (p - .4) / .4, (p - .8) / .2];
     dots.forEach(function (d, i) { d.style.width = Math.round(Math.min(1, Math.max(0, parts[i])) * 100) + "%"; });
+    // The light crosses the page as the day goes on.
+    light.style.setProperty("--beam", (22 - p * 44).toFixed(1) + "%");
     if (p >= .8) today.classList.add("filled");
   }
 
