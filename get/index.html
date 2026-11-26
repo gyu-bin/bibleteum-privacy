@@ -8,13 +8,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="바이블틈 · 앱을 열기 전, 말씀 먼저">
   <meta property="og:description" content="말씀을 읽거나 필사하면 멈춰 둔 앱이 다시 열려요.">
-  <meta property="og:image" content="https://gyu-bin.github.io/bibleteum-privacy/get/icon.png">
+  <meta property="og:image" content="https://gyu-bin.github.io/bibleteum-privacy/get/icon.png?v=20261126">
   <meta property="og:url" content="https://gyu-bin.github.io/bibleteum-privacy/get/">
   <meta name="theme-color" content="#F6F1EA" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://gyu-bin.github.io/bibleteum-privacy/get/">
-  <link rel="icon" href="icon.png">
+  <link rel="icon" href="icon.png?v=20261126">
   <link rel="stylesheet" href="style.css?v=20261121b">
+  <link rel="stylesheet" href="play.css?v=20261126">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -48,55 +49,54 @@
       </figure>
     </section>
 
-    <section class="wrap story" aria-labelledby="story-title">
+    <section class="wrap story play scroll-play" data-play="scroll" aria-labelledby="story-title">
       <h2 id="story-title">하루의 순서</h2>
-      <ol class="steps">
-        <li class="step">
-          <div class="step-copy">
-            <span class="numeral" aria-hidden="true">1</span>
-            <h3>앱 잠김</h3>
-            <p>잠시 멈출 앱을 골라 두면, 그 앱을 열 때 말씀이 먼저 나와요. 급한 일이 있으면 15분 동안 열 수 있어요.</p>
+      <p class="play-hint"><span class="hint-wide">천천히 내리면 화면이 하루의 순서대로 바뀌어요. 화면을 직접 눌러도 돼요.</span><span class="hint-narrow">화면을 직접 눌러 보세요. 잠긴 앱에서 말씀을 읽고 다시 열리기까지 30초면 돼요.</span></p>
+      <div class="play-grid">
+        <ol class="play-steps">
+          <li><span class="numeral" aria-hidden="true">1</span><div><h3>앱 잠김</h3><p>잠시 멈출 앱을 골라 두면, 그 앱을 열 때 말씀이 먼저 나와요. 급한 일이 있으면 15분 동안 열 수 있어요.</p></div></li>
+          <li><span class="numeral" aria-hidden="true">2</span><div><h3>말씀 읽기</h3><p>오늘 분량을 천천히 읽거나 키보드로 따라 써요. 마지막 절까지 읽어야 마칠 수 있어요.</p></div></li>
+          <li><span class="numeral" aria-hidden="true">3</span><div><h3>다시 열림</h3><p>말씀을 마치면 멈춰 둔 앱이 다시 열려요. 읽은 말씀은 기록에 남아요.</p></div></li>
+        </ol>
+        <div class="device" role="group" aria-label="바이블틈 체험 화면">
+          <p class="play-live sr-only" aria-live="polite"></p>
+          <div class="screen screen-home is-on" data-screen="home">
+            <strong class="home-title">잠가 둔 앱</strong>
+            <p class="home-sub">하나를 눌러 열어 보세요.</p>
+            <div class="tiles">
+            <button class="tile" type="button" data-app="피드"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>피드<svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+            <button class="tile" type="button" data-app="동영상"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg>동영상<svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+            <button class="tile" type="button" data-app="메신저"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H10l-5 4v-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>메신저<svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+            <button class="tile" type="button" data-app="쇼핑"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>쇼핑<svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+            </div>
           </div>
-          <div class="leaf leaf-lock" aria-hidden="true">
-            <svg class="glyph" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            <strong>잠시, 말씀을 읽을 시간</strong>
-            <p>오늘의 말씀을 마치면<br>오전 4시까지 앱을 쓸 수 있어요.</p>
-            <span class="leaf-btn">말씀 시작하기</span>
-            <small>일시 해제 · 2회</small>
+          <div class="screen screen-lock" data-screen="lock" aria-hidden="true">
+            <svg class="hourglass" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 2V8L10 12L6 16V22H18V16L14 12L18 8V2Z M8 4H16V7.5L12 11.5L8 7.5Z M8 20V16.5L12 12.5L16 16.5V20Z"/></svg>
+            <strong>말씀을 읽을 시간</strong>
+            <p class="lock-state"><span data-app-name>피드</span> 잠금 중</p>
+            <p class="lock-body">오늘의 말씀을 마치면<br>잠긴 앱을 다시 쓸 수 있어요.</p>
+            <p class="lock-note" aria-live="polite"></p>
+            <button class="primary" type="button" data-start>말씀 시작하기</button>
+            <button class="quiet" type="button" data-break>일시 해제 · 2회</button>
           </div>
-        </li>
-        <li class="step">
-          <div class="step-copy">
-            <span class="numeral" aria-hidden="true">2</span>
-            <h3>말씀 읽기</h3>
-            <p>오늘 분량을 천천히 읽거나 키보드로 따라 써요. iPad에서는 Apple Pencil로 직접 쓸 수 있어요.</p>
-          </div>
-          <div class="leaf leaf-read" aria-hidden="true">
+          <div class="screen screen-read" data-screen="read" aria-hidden="true">
             <div class="leaf-head"><strong>창세기 1장</strong><span>개역한글</span></div>
             <div class="bar"><i></i></div>
-            <ol class="scripture">
-              <li>태초에 하나님이 천지를 창조하시니라</li>
-              <li>땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 신은 수면에 운행하시니라</li>
-              <li>하나님이 가라사대 빛이 있으라 하시매 빛이 있었고</li>
-              <li>그 빛이 하나님의 보시기에 좋았더라 하나님이 빛과 어두움을 나누사</li>
-            </ol>
-            <span class="leaf-btn">읽기 완료</span>
+            <div class="verses" tabindex="0" aria-label="창세기 1장 1절부터 8절"><ol class="scripture"><li>태초에 하나님이 천지를 창조하시니라</li><li>땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 신은 수면에 운행하시니라</li><li>하나님이 가라사대 빛이 있으라 하시매 빛이 있었고</li><li>그 빛이 하나님의 보시기에 좋았더라 하나님이 빛과 어두움을 나누사</li><li>빛을 낮이라 칭하시고 어두움을 밤이라 칭하시니라 저녁이 되며 아침이 되니 이는 첫째 날이니라</li><li>하나님이 가라사대 물 가운데 궁창이 있어 물과 물로 나뉘게 하리라 하시고</li><li>하나님이 궁창을 만드사 궁창 아래의 물과 궁창 위의 물로 나뉘게 하시매 그대로 되니라</li><li>하나님이 궁창을 하늘이라 칭하시니라 저녁이 되며 아침이 되니 이는 둘째 날이니라</li></ol></div>
+            <p class="read-hint">마지막 절까지 읽어 주세요</p>
+            <button class="primary" type="button" data-finish disabled>읽기 완료</button>
           </div>
-        </li>
-        <li class="step">
-          <div class="step-copy">
-            <span class="numeral accent" aria-hidden="true">3</span>
-            <h3>다시 열림</h3>
-            <p>말씀을 마치면 멈춰 둔 앱이 다시 열려요. 읽은 말씀은 기록에 남고, 읽기 카드로 나눌 수 있어요.</p>
-          </div>
-          <div class="leaf leaf-done" aria-hidden="true">
-            <svg class="glyph accent" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg>
+          <div class="screen screen-done" data-screen="done" aria-hidden="true">
+            <svg class="lock-open" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path class="shackle" d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
             <strong>1장 읽기를 마쳤어요</strong>
-            <p>읽기 기록을 저장했어요.</p>
-            <div class="leaf-rows"><span>말씀 더 읽기</span><span>읽기 카드 공유</span></div>
+            <p class="done-body" data-done-body>피드가 다시 열렸어요. 읽은 말씀은 기록에 남았어요.</p>
+            <div class="leaf-rows">
+              <button type="button" data-week>이번 주 오늘 칸 보기</button>
+              <button type="button" data-again>처음부터 다시 해 보기</button>
+            </div>
           </div>
-        </li>
-      </ol>
+        </div>
+      </div>
     </section>
 
     <section class="wrap contents" aria-labelledby="contents-title">
@@ -222,18 +222,7 @@
     storesObserver.observe(document.getElementById("final-stores"));
   }
 
-  // The reading bar fills the first time its page comes into view.
-  var readLeaf = document.querySelector(".leaf-read");
-  if ("IntersectionObserver" in window) {
-    var readObserver = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting) return;
-      readLeaf.classList.add("seen");
-      readObserver.disconnect();
-    }, { threshold: 0.45 });
-    readObserver.observe(readLeaf);
-  } else {
-    readLeaf.classList.add("seen");
-  }
 </script>
+  <script src="play.js?v=20261126"></script>
 </body>
 </html>
